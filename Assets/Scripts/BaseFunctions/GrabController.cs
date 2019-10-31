@@ -7,29 +7,33 @@ public class GrabController : MonoBehaviour
     public float radius = 1;
     public LayerMask interactable;
     GameObject grabedGameObject = null;
-    private bool grabTrigger
+  /*  private bool grabTrigger = false;
+    public bool GrabTrigger
     {
         get { return grabTrigger; }
         set
         {
             grabTrigger = value;
-            Grab();
+            if (grabTrigger)
+            {
+                Grab();
+            }
         }
     }
 
     private void Update()
     {
-        if (VRController.grabTriggert != grabTrigger)
+        if (VRController.grabTriggert != GrabTrigger)
         {
-            grabTrigger = VRController.grabTriggert;
+            GrabTrigger = VRController.grabTriggert;
         }
     }
-
+*/
     public void Grab()
     {
         if (grabedGameObject == null)
         {
-            float minDist = 0;
+            float minDist = Mathf.Infinity;
             Collider[] colliders = Physics.OverlapSphere(transform.position, radius, interactable);
             foreach (var collider in colliders)
             {
@@ -46,15 +50,17 @@ public class GrabController : MonoBehaviour
             }
             grabedGameObject.transform.parent = transform;
         }
-        else
+        
+    }
+
+    public void letGo()
+    {
+        if (grabedGameObject.GetComponent<Rigidbody>() != null)
         {
-            if (grabedGameObject.GetComponent<Rigidbody>() != null)
-            {
-                grabedGameObject.GetComponent<Rigidbody>().isKinematic = false;
-            }
-            grabedGameObject.transform.parent = null;
-            grabedGameObject = null;
+            grabedGameObject.GetComponent<Rigidbody>().isKinematic = false;
         }
+        grabedGameObject.transform.parent = null;
+        grabedGameObject = null;
     }
     private void OnDrawGizmosSelected()
     {

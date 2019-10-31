@@ -13,7 +13,8 @@ public class VRController : MonoBehaviour
     public SteamVR_Action_Vector2 TrackpadAction;
     public SteamVR_Action_Boolean JumpAction;
     public SteamVR_Action_Boolean GrabAction;
-    public static bool grabTriggert;
+    public static bool grabTriggert =false;
+    public GrabController grabController;
 
     public float jumpHeight;
     public float MovementSpeed;
@@ -55,8 +56,13 @@ public class VRController : MonoBehaviour
 
         if (GrabAction.GetStateDown(grab))
         {
-            grabTriggert = true;
-        }//missing release
+            grabController.Grab();
+        }
+        else if (GrabAction.GetStateUp(grab))
+        {
+            grabController.letGo();
+        }
+        //missing release
     }
 
     public static float Angle(Vector2 p_vector2)
