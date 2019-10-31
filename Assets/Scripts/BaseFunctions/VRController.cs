@@ -9,8 +9,12 @@ public class VRController : MonoBehaviour
     private CapsuleCollider CapCollider;
 
     public SteamVR_Input_Sources MovementHand;//Set Hand To Get Input From
+    public SteamVR_Input_Sources grab;
     public SteamVR_Action_Vector2 TrackpadAction;
     public SteamVR_Action_Boolean JumpAction;
+    public SteamVR_Action_Boolean GrabAction;
+    public static bool grabTriggert;
+
     public float jumpHeight;
     public float MovementSpeed;
     public float Deadzone;//the Deadzone of the trackpad. used to prevent unwanted walking.
@@ -48,6 +52,11 @@ public class VRController : MonoBehaviour
         {
             CapCollider.material = FrictionMaterial;
         }
+
+        if (GrabAction.GetStateDown(grab))
+        {
+            grabTriggert = true;
+        }//missing release
     }
 
     public static float Angle(Vector2 p_vector2)
