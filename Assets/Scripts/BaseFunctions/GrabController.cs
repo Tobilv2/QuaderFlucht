@@ -12,6 +12,7 @@ public class GrabController : MonoBehaviour
         get { return grabTrigger; }
         set
         {
+            grabTrigger = value;
             Grab();
         }
     }
