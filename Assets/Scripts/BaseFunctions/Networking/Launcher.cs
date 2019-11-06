@@ -132,7 +132,7 @@ namespace Networking
 
 				// #Critical
 				// Load the Room Level.
-				PhotonNetwork.LoadLevel("TestLevel");
+				PhotonNetwork.LoadLevel("Level2");
 			}
 
 		}

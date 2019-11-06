@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8499799618547096307}
   - component: {fileID: 6490873005285296363}
   - component: {fileID: 7911809212614097991}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9001243278314185281}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
   m_TagString: PuzzleCube
   m_Icon: {fileID: 0}
