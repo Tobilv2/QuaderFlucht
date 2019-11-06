@@ -47,6 +47,7 @@ public class GrabController : MonoBehaviour
             if (grabedGameObject.GetComponent<Rigidbody>() != null)
             {
                 grabedGameObject.GetComponent<Rigidbody>().isKinematic = true;
+                grabedGameObject.GetComponent<Collider>().isTrigger = true;
             }
             grabedGameObject.transform.parent = transform;
         }
@@ -58,6 +59,8 @@ public class GrabController : MonoBehaviour
         if (grabedGameObject.GetComponent<Rigidbody>() != null)
         {
             grabedGameObject.GetComponent<Rigidbody>().isKinematic = false;
+            grabedGameObject.GetComponent<Collider>().isTrigger = false;
+            
         }
         grabedGameObject.transform.parent = null;
         grabedGameObject = null;

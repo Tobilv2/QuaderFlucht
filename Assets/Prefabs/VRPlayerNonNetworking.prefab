@@ -248,12 +248,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementHand: 1
+  grab: 0
   TrackpadAction:
     actionPath: /actions/default/in/touchpadmovement
     needsReinit: 0
   JumpAction:
     actionPath: /actions/default/in/touchpadjump
     needsReinit: 0
+  GrabAction:
+    actionPath: 
+    needsReinit: 0
+  grabController: {fileID: 0}
   jumpHeight: 1
   MovementSpeed: 1.5
   Deadzone: 0
@@ -462,7 +467,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 7501232573781807964}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
