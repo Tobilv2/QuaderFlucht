@@ -13,10 +13,14 @@ public class LaserController : MonoBehaviour
     public SteamVR_Action_Boolean laserAction;
 
     public SteamVR_Action_Boolean grabAction;
+    
+    public SteamVR_Action_Vector2 trackpadAction;
 
     public GameObject testPrefab;
 
     public GameObject grabPoint;
+
+    public float dragSpeed;
 
 
     private GameObject hitGameObject = null;
@@ -24,6 +28,8 @@ public class LaserController : MonoBehaviour
     private bool laserActive = false;
 
     private RaycastHit hit;
+
+    private Vector2 trackpad;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +39,8 @@ public class LaserController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        trackpad = trackpadAction.GetAxis(laserInput);
+        print(trackpad);
         if (laserAction.GetStateDown(laserInput))
         {
             ShowLaser();
@@ -79,12 +87,7 @@ public class LaserController : MonoBehaviour
         
         if(hitGameObject != null)
         {
-            /**if (Vector3.Magnitude(hit.point - transform.position) <
-                Vector3.Magnitude(grabPoint.transform.position - transform.position))
-            {
-                grabPoint.transform.position = hit.point;
-            }
-            */
+            grabPoint.transform.Translate(dragSpeed * Time.deltaTime * trackpad.y * (grabPoint.transform.position-transform.position).normalized, Space.World);
             hitGameObject.transform.position = grabPoint.transform.position;
         }
     }
