@@ -925,7 +925,7 @@ PrefabInstance:
     - target: {fileID: 1959255300959944066, guid: 4bfe6382ec87045609eb852c1c990fa8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.9756682
+      value: -3.869
       objectReference: {fileID: 0}
     - target: {fileID: 1959255300959944066, guid: 4bfe6382ec87045609eb852c1c990fa8,
         type: 3}
@@ -1340,21 +1340,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 421627559585240279, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 421627559585240279, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -10.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 421627559585240279, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -4.87
-      objectReference: {fileID: 0}
     - target: {fileID: 421627559585240280, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
         type: 3}
       propertyPath: m_IsActive
@@ -1610,11 +1595,6 @@ PrefabInstance:
       propertyPath: Door
       value: 
       objectReference: {fileID: 1331905787}
-    - target: {fileID: 308022603596079539, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b5e084c3f4c1f34696f541ecd56e1fd, type: 3}
 --- !u!4 &526795441 stripped
@@ -2462,11 +2442,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 149654759}
-    - target: {fileID: 4513344275523948648, guid: ad85ec0d0df2e4257b3b7fe1671f534b,
-        type: 3}
-      propertyPath: Door
-      value: 
-      objectReference: {fileID: 1331905787}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad85ec0d0df2e4257b3b7fe1671f534b, type: 3}
 --- !u!4 &1198998861 stripped
@@ -3592,8 +3567,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884991024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.671, y: -3.439, z: 12.463}
-  m_LocalScale: {x: 0.303125, y: 0.8922656, z: 0.30163363}
+  m_LocalPosition: {x: -1.671, y: -3.469, z: 12.463}
+  m_LocalScale: {x: 0.303125, y: 1.0724274, z: 0.30163363}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
