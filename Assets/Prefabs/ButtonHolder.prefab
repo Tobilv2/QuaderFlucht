@@ -1168,7 +1168,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4513344275523948662}
   - component: {fileID: 4513344275523948649}
-  - component: {fileID: 4513344275523948648}
   m_Layer: 0
   m_Name: ButtonTrigger
   m_TagString: Untagged
@@ -1203,16 +1202,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8914529, y: 0.50467825, z: 0.5905309}
   m_Center: {x: 0.47397512, y: 0.54218984, z: -0.53159213}
---- !u!114 &4513344275523948648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4513344275523948651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff59b920e4d5fea42ac023217cf75f36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Door: {fileID: 0}

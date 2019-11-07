@@ -15,6 +15,8 @@ namespace Networking
 		[SerializeField]
 		private byte maxPlayersPerRoom = 2;
 
+
+		public string levelToLoad;
 		[Tooltip("The Ui Panel to let the user enter name, connect and play")]
 		[SerializeField]
 		private GameObject controlPanel;
@@ -132,7 +134,7 @@ namespace Networking
 
 				// #Critical
 				// Load the Room Level.
-				PhotonNetwork.LoadLevel("TestLevel");
+				PhotonNetwork.LoadLevel(levelToLoad);
 			}
 
 		}
