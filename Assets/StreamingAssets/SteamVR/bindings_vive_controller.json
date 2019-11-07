@@ -205,11 +205,8 @@
             },
             {
                "inputs" : {
-                  "click" : {
-                     "output" : "/actions/default/in/touchpadjump"
-                  },
                   "position" : {
-                     "output" : "/actions/default/in/touchpadmovement"
+                     "output" : "/actions/default/in/lasergrabcontrol"
                   }
                },
                "mode" : "trackpad",
