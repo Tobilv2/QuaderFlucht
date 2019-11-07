@@ -52,9 +52,13 @@ MonoBehaviour:
   grabAction:
     actionPath: /actions/default/in/grab
     needsReinit: 0
+  trackpadAction:
+    actionPath: /actions/default/in/lasergrabcontrol
+    needsReinit: 0
   testPrefab: {fileID: 1895806383829631043, guid: a79595cbf9660f1468ff445115876110,
     type: 3}
   grabPoint: {fileID: 703444988718072117}
+  dragSpeed: 5
 --- !u!1 &935466236
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,7 +77,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &935466237
 Transform:
   m_ObjectHideFlags: 0
