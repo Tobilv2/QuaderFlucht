@@ -14,7 +14,7 @@ public class DoorController : MonoBehaviour
         Door.GetComponent<Animation>().Play("CloseDoor");
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("OpenDoorButton"))
         {

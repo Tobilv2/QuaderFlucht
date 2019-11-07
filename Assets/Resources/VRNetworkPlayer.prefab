@@ -49,6 +49,9 @@ MonoBehaviour:
   laserAction:
     actionPath: /actions/default/in/laser
     needsReinit: 0
+  testPrefab: {fileID: 1895806383829631043, guid: a79595cbf9660f1468ff445115876110,
+    type: 3}
+  grabPoint: {fileID: 703444988718072117}
 --- !u!1 &935466236
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,7 +70,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &935466237
 Transform:
   m_ObjectHideFlags: 0
@@ -77,8 +80,9 @@ Transform:
   m_GameObject: {fileID: 935466236}
   m_LocalRotation: {x: -0.95105654, y: 0, z: 0, w: 0.30901697}
   m_LocalPosition: {x: 0.0017, y: -5.868, z: 8.07712}
-  m_LocalScale: {x: 0.001, y: 0.001, z: 20}
-  m_Children: []
+  m_LocalScale: {x: 0.002, y: 0.002, z: 20}
+  m_Children:
+  - {fileID: 8374572400704356552}
   m_Father: {fileID: 926826755}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -144, y: 0, z: 0}
@@ -239,6 +243,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   origin: {fileID: 0}
+--- !u!1 &703444988718072117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8374572400704356552}
+  m_Layer: 0
+  m_Name: GrabPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8374572400704356552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703444988718072117}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 935466237}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3016519672884319619
 GameObject:
   m_ObjectHideFlags: 0

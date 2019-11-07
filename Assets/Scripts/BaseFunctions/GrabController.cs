@@ -7,28 +7,7 @@ public class GrabController : MonoBehaviour
     public float radius = 1;
     public LayerMask interactable;
     GameObject grabedGameObject = null;
-  /*  private bool grabTrigger = false;
-    public bool GrabTrigger
-    {
-        get { return grabTrigger; }
-        set
-        {
-            grabTrigger = value;
-            if (grabTrigger)
-            {
-                Grab();
-            }
-        }
-    }
 
-    private void Update()
-    {
-        if (VRController.grabTriggert != GrabTrigger)
-        {
-            GrabTrigger = VRController.grabTriggert;
-        }
-    }
-*/
     public void Grab()
     {
         if (grabedGameObject == null)
