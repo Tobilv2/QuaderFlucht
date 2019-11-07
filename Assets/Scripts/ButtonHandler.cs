@@ -1,9 +1,8 @@
 using UnityEngine;
 
-    public class DoorHandler : MonoBehaviour
+    public class ButtonHandler : MonoBehaviour
     {
 
-        public GameObject gO;
         public Door door;
         
         private void OnTriggerExit(Collider other)
