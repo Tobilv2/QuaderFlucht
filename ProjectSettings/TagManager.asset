@@ -12,6 +12,7 @@ TagManager:
   - FxTemporaire
   - Enemy
   - VRPlayer
+  - Metal
   layers:
   - Default
   - TransparentFX

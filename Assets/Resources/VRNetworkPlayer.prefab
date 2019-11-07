@@ -49,6 +49,9 @@ MonoBehaviour:
   laserAction:
     actionPath: /actions/default/in/laser
     needsReinit: 0
+  grabAction:
+    actionPath: /actions/default/in/grab
+    needsReinit: 0
   testPrefab: {fileID: 1895806383829631043, guid: a79595cbf9660f1468ff445115876110,
     type: 3}
   grabPoint: {fileID: 703444988718072117}
