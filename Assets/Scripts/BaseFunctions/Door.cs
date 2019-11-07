@@ -8,12 +8,9 @@ public class DoorController : MonoBehaviour
     private new Animation animation;
     private bool DoorIsOpen;
 
-    private void OnTriggerExit(Collider other)
+    private void Start()
     {
-        if (other.CompareTag("OpenDoorButton"))
-        {
-           CloseDoor();
-        }
+        CloseDoor();
     }
 
     private void OpenDoor()

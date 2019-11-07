@@ -6,10 +6,12 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     private new Animation animation;
-    private bool DoorIsOpen = false;
+    private bool DoorIsOpen;
 
     private void Start()
     {
+
+        DoorIsOpen = true;
         CloseDoor();
     }
 
@@ -26,7 +28,7 @@ public class Door : MonoBehaviour
     {
         if (DoorIsOpen)
         {
-            GetComponent<Animation>().Play("CloseDor");
+            GetComponent<Animation>().Play("CloseDoor");
             DoorIsOpen = false;
         }
     }
