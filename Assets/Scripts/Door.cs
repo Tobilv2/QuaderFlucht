@@ -1,22 +1,19 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorController : MonoBehaviour
+public class Door : MonoBehaviour
 {
     private new Animation animation;
-    private bool DoorIsOpen;
+    private bool DoorIsOpen = false;
 
-    private void OnTriggerExit(Collider other)
+    private void Start()
     {
-        if (other.CompareTag("OpenDoorButton"))
-        {
-           CloseDoor();
-        }
+        CloseDoor();
     }
 
-    private void OpenDoor()
+    public void OpenDoor()
     {
         if (!DoorIsOpen)
         {
@@ -25,7 +22,7 @@ public class DoorController : MonoBehaviour
         }
     } 
     
-    private void CloseDoor()
+    public void CloseDoor()
     {
         if (DoorIsOpen)
         {
