@@ -137,6 +137,14 @@ namespace Valve.VR
             }
         }
         
+        public virtual SteamVR_Action_Vector2 lasergrabcontrol
+        {
+            get
+            {
+                return SteamVR_Actions.default_lasergrabcontrol;
+            }
+        }
+        
         public virtual SteamVR_Action_Vibration Haptic
         {
             get
