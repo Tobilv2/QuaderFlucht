@@ -9,7 +9,7 @@ public class CheckLevelBounds : MonoBehaviourPunCallbacks
 {
     private void OnTriggerEnter(Collider other)
     {
-        PhotonNetwork.LoadLevel("Level2");
+        PhotonNetwork.LoadLevel("Level3");
     }
 }
 
