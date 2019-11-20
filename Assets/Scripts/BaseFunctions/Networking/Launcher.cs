@@ -131,7 +131,7 @@ namespace Networking
 			{
 				Debug.Log("First Level is loading");
 
-
+				PlayerPrefs.SetInt("level",1);
 				// #Critical
 				// Load the Room Level.
 				PhotonNetwork.LoadLevel(levelToLoad);

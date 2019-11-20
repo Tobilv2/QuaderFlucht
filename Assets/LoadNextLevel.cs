@@ -1,18 +1,24 @@
 ﻿using System;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class LoadNextLevel : MonoBehaviourPunCallbacks
 {
     private void Start()
     {
-        PlayerPrefs.SetInt("level",2);
+    
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        PlayerPrefs.SetInt("level",PlayerPrefs.GetInt("level")+1);
-        PhotonNetwork.LoadLevel(PlayerPrefs.GetInt("level"));
+        if (other.CompareTag("VRPlayer"))
+        {
+
+            PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
+            PhotonNetwork.LoadLevel("Level" + PlayerPrefs.GetInt("level").ToString());
+            print(PlayerPrefs.GetInt("level"));
+        }
     }
 
     private void OnApplicationQuit()
