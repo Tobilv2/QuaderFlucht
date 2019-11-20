@@ -55,8 +55,6 @@ MonoBehaviour:
   trackpadAction:
     actionPath: /actions/default/in/lasergrabcontrol
     needsReinit: 0
-  testPrefab: {fileID: 1895806383829631043, guid: a79595cbf9660f1468ff445115876110,
-    type: 3}
   grabPoint: {fileID: 703444988718072117}
   dragSpeed: 5
 --- !u!1 &935466236
@@ -3051,6 +3049,7 @@ GameObject:
   - component: {fileID: 2449947601218110790}
   - component: {fileID: 418870969094168839}
   - component: {fileID: 875279626888475150}
+  - component: {fileID: -4167840796368222719}
   m_Layer: 0
   m_Name: VRNetworkPlayer
   m_TagString: VRPlayer
@@ -3247,6 +3246,25 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+--- !u!95 &-4167840796368222719
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8308279698150750922}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8308998222185771830
 GameObject:
   m_ObjectHideFlags: 0
