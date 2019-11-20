@@ -56,7 +56,8 @@ MonoBehaviour:
     actionPath: /actions/default/in/lasergrabcontrol
     needsReinit: 0
   grabPoint: {fileID: 703444988718072117}
-  dragSpeed: 5
+  dragSpeed: 10
+  chaseSpeed: 2.5
 --- !u!1 &935466236
 GameObject:
   m_ObjectHideFlags: 0
