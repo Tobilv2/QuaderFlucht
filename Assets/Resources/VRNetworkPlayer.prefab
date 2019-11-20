@@ -58,6 +58,7 @@ MonoBehaviour:
   grabPoint: {fileID: 703444988718072117}
   dragSpeed: 10
   chaseSpeed: 2.5
+  minDistance: 2
 --- !u!1 &935466236
 GameObject:
   m_ObjectHideFlags: 0

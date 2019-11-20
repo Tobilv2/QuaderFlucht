@@ -1,12 +1,13 @@
 ﻿using Photon.Pun;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class CheckLevelBounds : MonoBehaviourPunCallbacks
 {
     private void OnTriggerEnter(Collider other)
     {
-        PhotonNetwork.LoadLevel("Level3");
+        PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().name);
     }
 }
 
