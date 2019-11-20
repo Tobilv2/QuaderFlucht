@@ -20,6 +20,8 @@ public class LaserController : MonoBehaviour
 
     public float dragSpeed;
 
+    public float chaseSpeed;
+
 
     private GameObject hitGameObject = null;
     
@@ -85,7 +87,8 @@ public class LaserController : MonoBehaviour
         if(hitGameObject != null)
         {
             grabPoint.transform.Translate(dragSpeed * Time.deltaTime * trackpad.y * (grabPoint.transform.position-transform.position).normalized, Space.World);
-            hitGameObject.transform.position = grabPoint.transform.position;
+            //hitGameObject.transform.position = grabPoint.transform.position;
+            hitGameObject.transform.Translate((chaseSpeed)*Time.deltaTime*(grabPoint.transform.position-hitGameObject.transform.position),Space.World);
         }
     }
 
