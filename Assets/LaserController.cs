@@ -61,7 +61,6 @@ public class LaserController : MonoBehaviour
 
                 if (grabAction.GetStateDown(laserInput))
                 {
-                    Debug.Log("Irgendwas");
                     
                     if (hit.collider.gameObject.CompareTag("Metal"))
                     {
