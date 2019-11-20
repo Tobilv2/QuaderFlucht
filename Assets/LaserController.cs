@@ -66,8 +66,7 @@ public class LaserController : MonoBehaviour
                     if (hit.collider.gameObject.CompareTag("Metal"))
                     {
                         hitGameObject = hit.collider.gameObject;
-                        hitGameObject.GetComponent<Rigidbody>().isKinematic = true;
-                        hitGameObject.GetComponent<Collider>().isTrigger = true;
+                        hitGameObject.GetComponent<Rigidbody>().useGravity = false;
 
                         grabPoint.transform.position = hitGameObject.transform.position;
                         
@@ -78,9 +77,9 @@ public class LaserController : MonoBehaviour
         
         if(grabAction.GetStateUp(laserInput) && hitGameObject != null)
         {
-            hitGameObject.GetComponent<Rigidbody>().isKinematic = false;
-            hitGameObject.GetComponent<Collider>().isTrigger = false;
-            hitGameObject.transform.parent = null;
+            Rigidbody hitRigidbody = hitGameObject.GetComponent<Rigidbody>();
+            hitRigidbody.useGravity = true;
+            hitRigidbody.AddForce(grabPoint.transform.position-hitGameObject.transform.position,ForceMode.Impulse);
             hitGameObject = null;
         }
         
