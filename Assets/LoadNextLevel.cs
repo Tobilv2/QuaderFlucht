@@ -5,6 +5,6 @@ public class LoadNextLevel : MonoBehaviourPunCallbacks
 {
     private void OnTriggerEnter(Collider other)
     {
-        PhotonNetwork.LoadLevel("Level4");
+        PhotonNetwork.LoadLevel("Level5");
     }
 }
