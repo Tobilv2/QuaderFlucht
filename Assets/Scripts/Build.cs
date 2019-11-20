@@ -11,6 +11,7 @@ public class Build : MonoBehaviour
     public LayerMask buildLayer;
     private GameObject currentPreviewGameObject;
     private Preview currentPreviewScript;
+    public bool deleteAfterSec = false;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,7 @@ public class Build : MonoBehaviour
         //Build Preview
         if (Input.GetMouseButtonDown(1) && currentPreviewGameObject != null)
         {
-            if (currentPreviewScript.isBuildable || currentPreviewGameObject.CompareTag("Enemy"))
+            if (currentPreviewScript.IsBuildable || currentPreviewGameObject.CompareTag("Enemy"))
             {
                 Destroy(currentPreviewGameObject.GetComponent<Preview>());
                 currentPreviewGameObject.GetComponentInChildren<MeshRenderer>().material.color = Color.white;
@@ -63,6 +64,11 @@ public class Build : MonoBehaviour
         {
             currentPreviewGameObject = Instantiate(gO, buildModelsHolder.transform);
 
+            if (deleteAfterSec)
+            {
+                Destroy(currentPreviewGameObject,6);
+            }
+            
             //Rigidbody kinem, is imported for check triggers in preview.
             Rigidbody rb;
             if (currentPreviewGameObject.GetComponent<Rigidbody>() != null)

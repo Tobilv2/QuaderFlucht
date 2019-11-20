@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Photon.Pun;
+﻿using Photon.Pun;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+
+public class ReloadLevel : MonoBehaviourPunCallbacks
 {
-  private void OnTriggerEnter(Collider other)
-  {
-    PhotonNetwork.LoadLevel(PlayerPrefs.GetInt("level"));
-  }
+    private void OnTriggerEnter(Collider other)
+    {
+        other.CompareTag("VRPlayer");
+        PhotonNetwork.LoadLevel("Level3");
+    }
 }
+

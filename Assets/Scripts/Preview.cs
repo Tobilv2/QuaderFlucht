@@ -6,19 +6,32 @@ using UnityEngine;
 public class Preview : MonoBehaviour
 {
 
-    public bool isBuildable;
+    private bool isBuildable;
+    public bool IsBuildable
+    {
+        get { return isBuildable; }
+        set
+        {
+            isBuildable = value;
+            Color color = isBuildable ?  Color.green :  Color.red;
+            GetComponentInChildren<MeshRenderer>().material.color = color;
+        }
+    }
 
+    private void Start()
+    {
+        IsBuildable = true;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        GetComponentInChildren<MeshRenderer>().material.color = Color.red;
-        isBuildable = false;
+        IsBuildable = false;
     }
     
     private void OnTriggerExit(Collider other)
     {
-        GetComponentInChildren<MeshRenderer>().material.color = Color.green;
-        isBuildable = true;
+        IsBuildable = true;
     }
+    
     
 }
