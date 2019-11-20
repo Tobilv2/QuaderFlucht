@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class DoorOpen : MonoBehaviour
 {
+    public Animation door;
     private void OnTriggerEnter(Collider other)
     {
-        GetComponent<Animation>().Play("OpenDoor");
+        door.Play("OpenDoor");
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.54441315, g: 0.50701135, b: 0.52427095, a: 1}
+  m_IndirectSpecularColor: {r: 0.54439956, g: 0.5070023, b: 0.5242686, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -29541,6 +29541,12 @@ PrefabInstance:
       objectReference: {fileID: 1201494285}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b5e084c3f4c1f34696f541ecd56e1fd, type: 3}
+--- !u!111 &526795441 stripped
+Animation:
+  m_CorrespondingSourceObject: {fileID: 6928033559912425326, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 526795440}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &592371244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30882,7 +30888,6 @@ GameObject:
   - component: {fileID: 1775822726}
   - component: {fileID: 1775822725}
   - component: {fileID: 1775822724}
-  - component: {fileID: 1775822723}
   - component: {fileID: 1775822722}
   m_Layer: 0
   m_Name: DoorOpen
@@ -30903,22 +30908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ab193999d89f744bb09b8fdcf7d4be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!111 &1775822723
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1775822721}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 07cad0f0f354b4a03a0adafb2624a3b7, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 07cad0f0f354b4a03a0adafb2624a3b7, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  door: {fileID: 526795441}
 --- !u!65 &1775822724
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31274,7 +31264,7 @@ MonoBehaviour:
   floor: {fileID: 1832204752}
   unvisibleTimer: {fileID: 85228677}
   floorText: {fileID: 940496284}
-  timer: 10
+  timer: 30
 --- !u!33 &1832204754
 MeshFilter:
   m_ObjectHideFlags: 0
