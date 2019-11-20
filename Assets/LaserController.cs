@@ -16,8 +16,6 @@ public class LaserController : MonoBehaviour
     
     public SteamVR_Action_Vector2 trackpadAction;
 
-    public GameObject testPrefab;
-
     public GameObject grabPoint;
 
     public float dragSpeed;
@@ -56,10 +54,9 @@ public class LaserController : MonoBehaviour
             Vector3 raydir = laser.transform.position - transform.position;
             if (Physics.Raycast(transform.position, raydir, out hit, Mathf.Infinity))
             {
-                Instantiate(testPrefab, hit.point, Quaternion.identity);
 
-                
-                
+
+
                 if (grabAction.GetStateDown(laserInput))
                 {
                     Debug.Log("Irgendwas");
