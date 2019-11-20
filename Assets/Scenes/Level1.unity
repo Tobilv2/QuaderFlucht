@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -617,18 +617,55 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3755109242387758706, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 217836209}
     - target: {fileID: 5854504493429575925, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 217836209}
+    - target: {fileID: 3755109242387758706, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 217836209}
+    - target: {fileID: 6928033559912425327, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928033559912425327, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928033559912425327, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928033559912425327, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928033559912425327, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b5e084c3f4c1f34696f541ecd56e1fd, type: 3}
+--- !u!114 &421627559485728288 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6928033559912425322, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 421627559485728287}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff59b920e4d5fea42ac023217cf75f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1959255299702922730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -726,11 +763,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonHolder
       objectReference: {fileID: 0}
-    - target: {fileID: 4513344275235779146, guid: ad85ec0d0df2e4257b3b7fe1671f534b,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 357160295}
     - target: {fileID: 4513344275235779147, guid: ad85ec0d0df2e4257b3b7fe1671f534b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -786,6 +818,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4513344275235779146, guid: ad85ec0d0df2e4257b3b7fe1671f534b,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 357160295}
     - target: {fileID: 4513344275235779151, guid: ad85ec0d0df2e4257b3b7fe1671f534b,
         type: 3}
       propertyPath: m_Mesh
@@ -798,3 +835,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad85ec0d0df2e4257b3b7fe1671f534b, type: 3}
+--- !u!1 &4513344276359195943 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4513344275523948651, guid: ad85ec0d0df2e4257b3b7fe1671f534b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4513344276359195942}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4513344276359195944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4513344276359195943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bfd53a420d5490398dab274ee6a980d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door: {fileID: 421627559485728288}
