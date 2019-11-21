@@ -10,11 +10,13 @@ public class BuildController : MonoBehaviourPun
 {
     public GameObject buildModelsHolder;
 
+    public GameObject standardFloorPrefab;
+    
     public LayerMask buildLayer;
     private GameObject currentPreviewGameObject;
     private Preview currentPreviewScript;
     public bool deleteAfterSec = false;
-    private GameObject currentPrefab;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +46,7 @@ public class BuildController : MonoBehaviourPun
             {
                 if (currentPreviewScript.IsBuildable || currentPreviewGameObject.CompareTag("Enemy"))
                 {
-                    photonView.RPC("InstantiateWithPhoton", RpcTarget.All,currentPrefab,currentPreviewGameObject.transform.position);
+                    photonView.RPC("InstantiateWithPhoton", RpcTarget.All,currentPreviewGameObject.transform.position);
 
                     Destroy(currentPreviewGameObject.GetComponent<Preview>());
                     currentPreviewGameObject.GetComponentInChildren<MeshRenderer>().material.color = Color.white;
@@ -68,12 +70,12 @@ public class BuildController : MonoBehaviourPun
         }
     }
 
-    public void StartBuildMode(GameObject gO)
+    public void StartBuildMode()
     {
         if (currentPreviewGameObject == null)
         {
-            currentPrefab = gO;
-            currentPreviewGameObject = Instantiate(gO, buildModelsHolder.transform);
+            
+            currentPreviewGameObject = Instantiate(standardFloorPrefab, buildModelsHolder.transform);
 
             //Rigidbody kinem, is imported for check triggers in preview.
             Rigidbody rb;
@@ -93,9 +95,9 @@ public class BuildController : MonoBehaviourPun
     }
 
     [PunRPC]
-    void InstantiateWithPhoton(GameObject pref, Vector3 pos)
+    void InstantiateWithPhoton(Vector3 pos)
     {
-        Instantiate(pref, pos,
+        Instantiate(standardFloorPrefab, pos,
             Quaternion.identity);
     }
 }

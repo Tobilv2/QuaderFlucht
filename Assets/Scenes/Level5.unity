@@ -648,11 +648,10 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1559518994}
         m_MethodName: StartBuildMode
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1536475624395125997, guid: 4cbbbd66a485d4e35b910626b3f46319,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -725,6 +724,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildModelsHolder: {fileID: 1559518993}
+  standardFloorPrefab: {fileID: 1536475624395125997, guid: 4cbbbd66a485d4e35b910626b3f46319,
+    type: 3}
   buildLayer:
     serializedVersion: 2
     m_Bits: 1024
