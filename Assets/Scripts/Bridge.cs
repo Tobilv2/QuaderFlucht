@@ -6,30 +6,30 @@ using UnityEngine;
 public class Bridge : MonoBehaviour
 {
     private new Animation animation;
-    private bool BridgeIsOpen;
+    private bool BridgeIsExtended;
 
     private void Start()
     {
 
-        BridgeIsOpen = true;
+        BridgeIsExtended = false;
         
     }
 
-    public void OpenDoor()
+    public void ExtendBridge()
     {
-        if (!BridgeIsOpen)
+        if (!BridgeIsExtended)
         {
-            GetComponent<Animation>().Play("BridgeAnimation");
-            BridgeIsOpen = true;
+            GetComponent<Animation>().Play("BridgeAnimationExtend");
+            BridgeIsExtended = true;
         }
     } 
     
-    public void CloseDoor()
+    public void RetractBridge()
     {
-        if (BridgeIsOpen)
+        if (BridgeIsExtended)
         {
-//            GetComponent<Animation>().Play("CloseDoor");
-            BridgeIsOpen = false;
+            GetComponent<Animation>().Play("BridgeAnimationRetract");
+            BridgeIsExtended = false;
         }
     }
 }
