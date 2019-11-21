@@ -7,9 +7,7 @@ using UnityEngine.UIElements;
 
 public class CubeController : MonoBehaviour
 {
-    public GameObject VRPlayerForTesting;
-    public float speed;
-
+    
     public Camera secondPlayerCam;
     public Material selectedMaterial;
 
@@ -23,25 +21,7 @@ public class CubeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        #region Testing
-
-        // Get the horizontal and vertical axis.
-        // By default they are mapped to the arrow keys.
-        // The value is in the range -1 to 1
-        float z = Input.GetAxis("Vertical") * speed;
-        float x = Input.GetAxis("Horizontal") * speed;
-
-        // Make it move 10 meters per second instead of 10 meters per frame...
-        x *= Time.deltaTime;
-        z *= Time.deltaTime;
-
-        // Move translation along the object's z-axis
-        VRPlayerForTesting.transform.Translate(x, 0, z);
-
-        // Rotate around our y-axis
-
-        #endregion
-
+        
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = secondPlayerCam.ScreenPointToRay(Input.mousePosition);
