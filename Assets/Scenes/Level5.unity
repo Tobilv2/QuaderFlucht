@@ -7543,20 +7543,20 @@ Transform:
   - {fileID: 1359157188}
   - {fileID: 995517398}
   - {fileID: 122006240}
-  - {fileID: 1831521652}
+  - {fileID: 1598909522}
   - {fileID: 2005018797}
   - {fileID: 1669334793}
-  - {fileID: 1598909522}
+  - {fileID: 1831521652}
   - {fileID: 1325239555}
   - {fileID: 1457962860}
+  - {fileID: 1401501907}
   - {fileID: 338490580}
   - {fileID: 2025741551}
-  - {fileID: 1683877527}
   - {fileID: 1531272522}
-  - {fileID: 486109076}
-  - {fileID: 1401501907}
+  - {fileID: 1683877527}
   - {fileID: 1369590191}
   - {fileID: 1661601292}
+  - {fileID: 486109076}
   - {fileID: 303890862}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -12095,7 +12095,7 @@ PrefabInstance:
     - target: {fileID: 1631325331728545793, guid: 4cbbbd66a485d4e35b910626b3f46319,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cbbbd66a485d4e35b910626b3f46319, type: 3}
@@ -13565,7 +13565,7 @@ PrefabInstance:
     - target: {fileID: 1631325331728545793, guid: 4cbbbd66a485d4e35b910626b3f46319,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cbbbd66a485d4e35b910626b3f46319, type: 3}
