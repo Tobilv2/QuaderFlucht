@@ -3205,7 +3205,7 @@ MonoBehaviour:
     needsReinit: 0
   grabController: {fileID: 1060164153675162736}
   jumpHeight: 1
-  MovementSpeed: 1.5
+  MovementSpeed: 3
   Deadzone: 0
   Head: {fileID: 8308998222185771830}
   AxisHand: {fileID: 3016519677002236355}
