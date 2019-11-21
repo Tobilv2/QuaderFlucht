@@ -42,7 +42,7 @@ public class BuildController : MonoBehaviourPunCallbacks
             {
                 if (currentPreviewScript.IsBuildable || currentPreviewGameObject.CompareTag("Enemy"))
                 {
-                    photonView.RPC("nstantiateWithPhoton", RpcTarget.All);
+                    photonView.RPC("InstantiateWithPhoton", RpcTarget.All);
 
                     Destroy(currentPreviewGameObject.GetComponent<Preview>());
                     currentPreviewGameObject.GetComponentInChildren<MeshRenderer>().material.color = Color.white;
