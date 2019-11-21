@@ -7,7 +7,7 @@ public class CheckLevelBounds : MonoBehaviourPunCallbacks
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (PhotonNetwork.NickName == "VR")
+        if (PhotonNetwork.NickName == "VR" && other.CompareTag("VRPlayer"))
         {
             PhotonNetwork.DestroyAll();
             photonView.RPC("ReloadScenesForAllPlayers",RpcTarget.All);
