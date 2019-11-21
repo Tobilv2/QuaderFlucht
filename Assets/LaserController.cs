@@ -42,7 +42,6 @@ public class LaserController : MonoBehaviour
     void Update()
     {
         trackpad = trackpadAction.GetAxis(laserInput);
-        print(trackpad);
         if (laserAction.GetStateDown(laserInput))
         {
             ShowLaser();

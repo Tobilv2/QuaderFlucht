@@ -24,21 +24,17 @@ public class BuildController : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(PhotonNetwork.NickName);
         if (PhotonNetwork.NickName == "mobile")
         {
-            Debug.Log("STUFE 2");
             if (currentPreviewGameObject != null)
             {
-                Debug.Log("STUFE 3");
+                
                 Camera cam = GameObject.FindWithTag("MobilePlayer").GetComponentInChildren<Camera>();
                 Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-                Debug.DrawRay(ray.origin,ray.direction*1000,Color.magenta);
                 RaycastHit hit;
 
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity, buildLayer))
                 {
-                    Debug.Log(hit.point);
                     currentPreviewGameObject.transform.position = hit.point;
                 }
             }
@@ -48,7 +44,7 @@ public class BuildController : MonoBehaviourPun
             {
                 if (currentPreviewScript.IsBuildable || currentPreviewGameObject.CompareTag("Enemy"))
                 {
-                    photonView.RPC("InstantiateWithPhoton", RpcTarget.All);
+                    photonView.RPC("InstantiateWithPhoton", RpcTarget.All,currentPrefab,currentPreviewGameObject.transform.position);
 
                     Destroy(currentPreviewGameObject.GetComponent<Preview>());
                     currentPreviewGameObject.GetComponentInChildren<MeshRenderer>().material.color = Color.white;
@@ -97,9 +93,9 @@ public class BuildController : MonoBehaviourPun
     }
 
     [PunRPC]
-    void InstantiateWithPhoton()
+    void InstantiateWithPhoton(GameObject pref, Vector3 pos)
     {
-        Instantiate(currentPrefab, currentPreviewGameObject.transform.position,
+        Instantiate(pref, pos,
             Quaternion.identity);
     }
 }
