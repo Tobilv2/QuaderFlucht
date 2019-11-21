@@ -11,7 +11,8 @@ public class BuildController : MonoBehaviourPun
     public GameObject buildModelsHolder;
 
     public GameObject standardFloorPrefab;
-    
+
+    public GameObject buildablePlane;
     public LayerMask buildLayer;
     private GameObject currentPreviewGameObject;
     private Preview currentPreviewScript;
@@ -21,6 +22,10 @@ public class BuildController : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
+        if (PhotonNetwork.NickName == "mobile")
+        {
+            Instantiate(buildablePlane);
+        }
     }
 
     // Update is called once per frame
@@ -48,7 +53,7 @@ public class BuildController : MonoBehaviourPun
                 {
                     photonView.RPC("InstantiateWithPhoton", RpcTarget.All,currentPreviewGameObject.transform.position);
 
-                    Destroy(currentPreviewGameObject.GetComponent<Preview>());
+                    Destroy(currentPreviewGameObject);
                     currentPreviewGameObject.GetComponentInChildren<MeshRenderer>().material.color = Color.white;
                     currentPreviewGameObject = null;
                 }
@@ -87,9 +92,12 @@ public class BuildController : MonoBehaviourPun
             {
                 rb = currentPreviewGameObject.AddComponent<Rigidbody>();
             }
-
+            
             rb.isKinematic = true;
 
+            if (currentPreviewGameObject.GetComponent<BoxCollider>() != null)
+                currentPreviewGameObject.GetComponent<BoxCollider>().isTrigger = true;
+            
             currentPreviewScript = currentPreviewGameObject.AddComponent<Preview>();
         }
     }
@@ -97,7 +105,8 @@ public class BuildController : MonoBehaviourPun
     [PunRPC]
     void InstantiateWithPhoton(Vector3 pos)
     {
-        Instantiate(standardFloorPrefab, pos,
+        GameObject gO = Instantiate(standardFloorPrefab, pos,
             Quaternion.identity);
+        Destroy(gO,6);
     }
 }

@@ -9,4 +9,8 @@ public class DoorOpen : MonoBehaviour
     {
         door.Play("OpenDoor");
     }
+    private void OnTriggerExit(Collider other)
+    {
+        door.Play("CloseDoor");
+    }
 }
