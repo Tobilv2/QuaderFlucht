@@ -6,7 +6,7 @@ using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class BuildController : MonoBehaviourPunCallbacks
+public class BuildController : MonoBehaviourPun
 {
     public GameObject buildModelsHolder;
 
@@ -24,15 +24,21 @@ public class BuildController : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(PhotonNetwork.NickName);
         if (PhotonNetwork.NickName == "mobile")
         {
+            Debug.Log("STUFE 2");
             if (currentPreviewGameObject != null)
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                Debug.Log("STUFE 3");
+                Camera cam = GameObject.FindWithTag("MobilePlayer").GetComponentInChildren<Camera>();
+                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                Debug.DrawRay(ray.origin,ray.direction*1000,Color.magenta);
                 RaycastHit hit;
 
-                if (Physics.Raycast(ray, out hit, 100f, buildLayer))
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, buildLayer))
                 {
+                    Debug.Log(hit.point);
                     currentPreviewGameObject.transform.position = hit.point;
                 }
             }
@@ -93,11 +99,7 @@ public class BuildController : MonoBehaviourPunCallbacks
     [PunRPC]
     void InstantiateWithPhoton()
     {
-        GameObject gO = Instantiate(currentPrefab, currentPreviewGameObject.transform.position,
+        Instantiate(currentPrefab, currentPreviewGameObject.transform.position,
             Quaternion.identity);
-        if (deleteAfterSec)
-        {
-            Destroy(gO, 6);
-        }
     }
 }
