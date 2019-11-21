@@ -9,5 +9,6 @@ public class CheckLevelBounds : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().name);
     }
+    
 }
 
