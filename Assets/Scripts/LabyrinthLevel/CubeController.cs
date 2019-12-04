@@ -43,8 +43,8 @@ public class CubeController : MonoBehaviourPunCallbacks
                             meshRenderer.material = oldMaterial;
                         }
                         
-                        //swaps position of clicked and selected
-                        photonView.RPC("SwapPos",RpcTarget.All,hit.transform,selectedCube.transform.position, position);
+                    
+                        photonView.RPC("SwapPos",RpcTarget.All,hit.transform,selectedCube,position);
 
                         //set bool of cube as Selected
                         selectedCube.GetComponent<CheckForPlayer>().isSelected = false;
@@ -70,11 +70,11 @@ public class CubeController : MonoBehaviourPunCallbacks
             }
         }
     }
-    
-    [PunRPC]
-
-    private void SwapPos(Transform gO, Vector3 transformPosition, Vector3 position)
+    //swaps position of clicked and selected
+    void SwapPos(Transform hitTransform,GameObject selectedCube ,Vector3 position)
     {
-        gO.position = selectedCube.transform.position;
-        selectedCube.transform.position = position;    }
+        hitTransform.position = selectedCube.transform.position;
+        selectedCube.transform.position = position;
+
+    }
 }

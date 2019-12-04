@@ -37,5 +37,6 @@ MonoBehaviour:
   - InstantiateWithPhoton
   - hall
   - ReloadScenesForAllPlayers
+  - SwapPos
   DisableAutoOpenWizard: 1
   ShowSettings: 1
