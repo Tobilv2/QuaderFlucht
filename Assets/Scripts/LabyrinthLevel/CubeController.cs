@@ -9,7 +9,6 @@ using UnityEngine.UIElements;
 public class CubeController : MonoBehaviourPunCallbacks
 {
     
-    public Camera secondPlayerCam;
     public Material selectedMaterial;
 
     private Material oldMaterial;
@@ -25,7 +24,9 @@ public class CubeController : MonoBehaviourPunCallbacks
         
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = secondPlayerCam.ScreenPointToRay(Input.mousePosition);
+            Camera cam = GameObject.FindWithTag("MobilePlayer").GetComponentInChildren<Camera>();
+
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit, 100))
