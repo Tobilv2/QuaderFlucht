@@ -3271,6 +3271,8 @@ GameObject:
   - component: {fileID: 7043725939126541040}
   - component: {fileID: 6877959973737743316}
   - component: {fileID: 8969850244544408592}
+  - component: {fileID: 272290620943717208}
+  - component: {fileID: -3563603573086326250}
   m_Layer: 0
   m_Name: PuzzleCubeT
   m_TagString: PuzzleCube
@@ -3331,3 +3333,40 @@ MonoBehaviour:
   unableToSelect: {fileID: 2100000, guid: c9101b38c72e146019093511f570fea7, type: 2}
   mouseOverMaterial: {fileID: 2100000, guid: 05c0da09d71024b87ae6806dd1c12455, type: 2}
   cubeIsMoveable: 0
+--- !u!114 &272290620943717208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6808500445597431813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: -3563603573086326250}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &-3563603573086326250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6808500445597431813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
