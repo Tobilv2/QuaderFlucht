@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 using Valve.VR;
 
 public class VRController : MonoBehaviour
@@ -7,17 +8,20 @@ public class VRController : MonoBehaviour
     private Vector3 moveDirection;
     private int GroundCount;
     private CapsuleCollider CapCollider;
+    private bool isSprinting = false;
 
     public SteamVR_Input_Sources MovementHand;//Set Hand To Get Input From
     public SteamVR_Input_Sources grab;
     public SteamVR_Action_Vector2 TrackpadAction;
     public SteamVR_Action_Boolean JumpAction;
+    public SteamVR_Action_Boolean SprintAction;
     public SteamVR_Action_Boolean GrabAction;
     public static bool grabTriggert =false;
     public GrabController grabController;
 
     public float jumpHeight;
     public float MovementSpeed;
+    public float sprintMultiplier;
     public float Deadzone;//the Deadzone of the trackpad. used to prevent unwanted walking.
     public GameObject Head;
     public GameObject AxisHand;//Hand Controller GameObject
@@ -61,6 +65,23 @@ public class VRController : MonoBehaviour
         else if (GrabAction.GetStateUp(grab))
         {
             grabController.letGo();
+        }
+
+        if (SprintAction.GetStateDown(MovementHand))
+        {
+            if (!isSprinting)
+            {
+                MovementSpeed *= sprintMultiplier;
+                isSprinting = true;
+            }
+        }
+        else if (SprintAction.GetStateUp(MovementHand))
+        {
+            if(isSprinting)
+            {
+                MovementSpeed /= sprintMultiplier;
+                isSprinting = false;
+            }
         }
         //missing release
     }

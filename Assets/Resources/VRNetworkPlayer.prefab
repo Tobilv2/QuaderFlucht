@@ -3200,12 +3200,16 @@ MonoBehaviour:
   JumpAction:
     actionPath: /actions/default/in/touchpadjump
     needsReinit: 0
+  SprintAction:
+    actionPath: /actions/default/in/sprint
+    needsReinit: 0
   GrabAction:
     actionPath: /actions/default/in/grab
     needsReinit: 0
   grabController: {fileID: 1060164153675162736}
   jumpHeight: 1
   MovementSpeed: 3
+  sprintMultiplier: 2
   Deadzone: 0
   Head: {fileID: 8308998222185771830}
   AxisHand: {fileID: 3016519677002236355}

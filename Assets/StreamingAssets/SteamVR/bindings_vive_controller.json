@@ -112,7 +112,7 @@
             {
                "inputs" : {
                   "click" : {
-                     "output" : "/actions/default/in/grabgrip"
+                     "output" : "/actions/default/in/touchpadjump"
                   }
                },
                "mode" : "button",
@@ -194,7 +194,7 @@
             {
                "inputs" : {
                   "click" : {
-                     "output" : "/actions/default/in/touchpadjump"
+                     "output" : "/actions/default/in/sprint"
                   },
                   "position" : {
                      "output" : "/actions/default/in/touchpadmovement"
