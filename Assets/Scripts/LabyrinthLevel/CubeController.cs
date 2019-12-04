@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class CubeController : MonoBehaviour
+public class CubeController : MonoBehaviourPunCallbacks
 {
     
     public Camera secondPlayerCam;
@@ -36,14 +37,19 @@ public class CubeController : MonoBehaviour
                     {
                         //save poisition of clicked cube
                         Vector3 position = hit.transform.position;
-                        //swaps position of clicked and selected
-                        hit.transform.position = selectedCube.transform.position;
-                        selectedCube.transform.position = position;
                         //setcolor to default
                         foreach (var meshRenderer in selectedCube.GetComponentsInChildren<MeshRenderer>())
                         {
                             meshRenderer.material = oldMaterial;
                         }
+                        
+                        //swaps position of clicked and selected
+                        photonView.RPC("ReloadScenesForAllPlayers",RpcTarget.All);
+
+                        SwapPos(hit.transform,selectedCube.transform.position, position);
+                   
+                        
+                        
                         //set bool of cube as Selected
                         selectedCube.GetComponent<CheckForPlayer>().isSelected = false;
                         
@@ -68,4 +74,11 @@ public class CubeController : MonoBehaviour
             }
         }
     }
+    
+    [PunRPC]
+
+    private void SwapPos(Transform gO, Vector3 transformPosition, Vector3 position)
+    {
+        gO.position = selectedCube.transform.position;
+        selectedCube.transform.position = position;    }
 }
