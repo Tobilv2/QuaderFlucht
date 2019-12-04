@@ -44,7 +44,7 @@ public class CubeController : MonoBehaviourPunCallbacks
                         }
                         
                         //swaps position of clicked and selected
-                        photonView.RPC("ReloadScenesForAllPlayers",RpcTarget.All);
+                        photonView.RPC("SwapPos",RpcTarget.All);
 
                         SwapPos(hit.transform,selectedCube.transform.position, position);
                    
