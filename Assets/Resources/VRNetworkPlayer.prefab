@@ -3208,7 +3208,7 @@ MonoBehaviour:
     needsReinit: 0
   grabController: {fileID: 1060164153675162736}
   jumpHeight: 1
-  MovementSpeed: 3
+  MovementSpeed: 2
   sprintMultiplier: 2
   Deadzone: 0
   Head: {fileID: 8308998222185771830}
