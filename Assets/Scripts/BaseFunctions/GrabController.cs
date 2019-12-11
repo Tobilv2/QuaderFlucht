@@ -35,7 +35,7 @@ public class GrabController : MonoBehaviour
 
     public void letGo()
     {
-        if (grabedGameObject.GetComponent<Rigidbody>() != null)
+        if (grabedGameObject != null && grabedGameObject.GetComponent<Rigidbody>() != null)
         {
             grabedGameObject.GetComponent<Rigidbody>().isKinematic = false;
             grabedGameObject.GetComponent<Collider>().isTrigger = false;
