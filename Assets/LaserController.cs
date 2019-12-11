@@ -63,7 +63,7 @@ public class LaserController : MonoBehaviour
                 if (grabAction.GetStateDown(laserInput))
                 {
                     
-                    if (hit.collider.gameObject.CompareTag("Metal"))
+                    if (hit.collider.gameObject.CompareTag("Metal") || hit.collider.gameObject.layer.Equals("Metal"))
                     {
                         hitGameObject = hit.collider.gameObject;
                         hitGameObject.GetComponent<Rigidbody>().useGravity = false;
