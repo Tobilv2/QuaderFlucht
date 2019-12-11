@@ -6,7 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class CubeController : MonoBehaviourPunCallbacks
+public class CubeController : MonoBehaviourPun
 {
     public Material selectedMaterial;
 
