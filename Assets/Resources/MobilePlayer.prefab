@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2821947986932886319}
   - component: {fileID: 1636907118354735762}
   - component: {fileID: 876567368830057806}
+  - component: {fileID: -2221309837491729532}
   m_Layer: 0
   m_Name: MobilePlayer
   m_TagString: MobilePlayer
@@ -70,6 +71,19 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+--- !u!114 &-2221309837491729532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2821947986932886316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45d23d622b164f64a17efacbd91dd4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flamePrefab: {fileID: 148766, guid: beb394936b9715549b3743727aa96c75, type: 3}
 --- !u!1 &2821947987148439192
 GameObject:
   m_ObjectHideFlags: 0
