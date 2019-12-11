@@ -7,9 +7,12 @@ public class ButtonHandlerBridge : MonoBehaviour
         
     private void OnTriggerExit(Collider other)
     {
-        
+
+        if (other.CompareTag("OpenDoorButton"))
+        {
             bridge.RetractBridge();
-        
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Bridge : MonoBehaviour
 {
-    private new Animator bridgeAnimator;
+    public new Animation bridgeAnim;
     private bool BridgeIsExtended;
 
     private void Start()
@@ -19,7 +19,7 @@ public class Bridge : MonoBehaviour
     {
         if (!BridgeIsExtended)
         {
-            bridgeAnimator.Play("BridgeAnimationExtend");
+            bridgeAnim.Play();
             BridgeIsExtended = true;
         }
     } 
@@ -28,7 +28,7 @@ public class Bridge : MonoBehaviour
     {
         if (BridgeIsExtended)
         {
-            GetComponent<Animation>().Play("BridgeAnimationRetract");
+            GetComponent<Animation>().Play("BridgeRetract");
             BridgeIsExtended = false;
         }
     }
