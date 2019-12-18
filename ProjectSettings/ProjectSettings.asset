@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 18
-  productGUID: 3e571eeb6168ce440a7bf42178647c00
+  productGUID: b7c1e8ae5d6ae3c44910041f4cca4726
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -308,10 +308,14 @@ PlayerSettings:
     m_Automatic: 1
   m_BuildTargetVRSettings:
   - m_BuildTarget: Standalone
+    m_Enabled: 0
+    m_Devices:
+    - Oculus
+    - OpenVR
+  - m_BuildTarget: Android
     m_Enabled: 1
     m_Devices:
     - OpenVR
-    - Oculus
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
