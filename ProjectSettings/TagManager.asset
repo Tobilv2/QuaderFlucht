@@ -13,6 +13,7 @@ TagManager:
   - Enemy
   - VRPlayer
   - Metal
+  - ResetTiles
   layers:
   - Default
   - TransparentFX
