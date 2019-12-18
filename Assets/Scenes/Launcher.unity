@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxPlayersPerRoom: 2
-  levelToLoad: TestLevel
+  levelToLoad: Level8
   controlPanel: {fileID: 812922892}
   progressPanel: {fileID: 6779171544605565290}
 --- !u!4 &560348676
