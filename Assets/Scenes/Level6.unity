@@ -127,7 +127,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh46790
+  m_Name: pb_Mesh20956
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -290,7 +290,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh46776
+  m_Name: pb_Mesh20942
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -47267,7 +47267,12 @@ PrefabInstance:
     - target: {fileID: 1959255300959944073, guid: 4bfe6382ec87045609eb852c1c990fa8,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959255300959944073, guid: 4bfe6382ec87045609eb852c1c990fa8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 1959255300959944066, guid: 4bfe6382ec87045609eb852c1c990fa8,
         type: 3}
@@ -47339,15 +47344,15 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.3499999
       objectReference: {fileID: 0}
-    - target: {fileID: 3784184365770345521, guid: 4bfe6382ec87045609eb852c1c990fa8,
-        type: 3}
-      propertyPath: viewIdField
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1959255300959944067, guid: 4bfe6382ec87045609eb852c1c990fa8,
         type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784184365770345521, guid: 4bfe6382ec87045609eb852c1c990fa8,
+        type: 3}
+      propertyPath: viewIdField
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bfe6382ec87045609eb852c1c990fa8, type: 3}

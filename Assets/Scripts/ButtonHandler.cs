@@ -7,7 +7,7 @@ using UnityEngine;
         
         private void OnTriggerExit(Collider other)
         {
-            if (other.CompareTag("OpenDoorButton"))
+            if (other.CompareTag("OpenDoorButton") || other.gameObject.layer.Equals("OpenDoorButton"))
             {
                 door.CloseDoor();
             }
@@ -15,7 +15,7 @@ using UnityEngine;
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("OpenDoorButton"))
+            if (other.CompareTag("OpenDoorButton") || other.gameObject.layer.Equals("OpenDoorButton"))
             {
                 door.OpenDoor();
             }

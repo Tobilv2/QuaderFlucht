@@ -8,7 +8,9 @@ public class ButtonHandlerBridge : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
 
-        if (other.CompareTag("OpenDoorButton"))
+        if (other.gameObject.layer.Equals("OpenDoorButton"));
+
+            
         {
             bridge.RetractBridge();
         }
@@ -17,7 +19,7 @@ public class ButtonHandlerBridge : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("OpenDoorButton"))
+        if (other.gameObject.layer.Equals("OpenDoorButton"))
         {
             bridge.ExtendBridge();
         }
