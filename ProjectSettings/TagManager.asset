@@ -13,6 +13,7 @@ TagManager:
   - Enemy
   - VRPlayer
   - Metal
+  - GreenL1
   layers:
   - Default
   - TransparentFX
