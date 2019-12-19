@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class BuildController : MonoBehaviourPun
@@ -16,16 +17,23 @@ public class BuildController : MonoBehaviourPun
     public LayerMask buildLayer;
     private GameObject currentPreviewGameObject;
     private Preview currentPreviewScript;
-    public bool deleteAfterSec = false;
-    
+
+    public List<GameObject> placedFloors;
+    public int maxPlaceAbleFloors;
+    public bool destroyAfterSec = true;
+    public bool instantiateBuildPlane = true;
+    public Text floorsLeftText;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (PhotonNetwork.NickName == "mobile")
+
+        if (PhotonNetwork.NickName == "mobile" && instantiateBuildPlane)
         {
             Instantiate(buildablePlane);
         }
+        floorsLeftText.text = maxPlaceAbleFloors.ToString();
+        placedFloors = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -35,7 +43,6 @@ public class BuildController : MonoBehaviourPun
         {
             if (currentPreviewGameObject != null)
             {
-                
                 Camera cam = GameObject.FindWithTag("MobilePlayer").GetComponentInChildren<Camera>();
                 Ray ray = cam.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
@@ -51,7 +58,7 @@ public class BuildController : MonoBehaviourPun
             {
                 if (currentPreviewScript.IsBuildable || currentPreviewGameObject.CompareTag("Enemy"))
                 {
-                    photonView.RPC("InstantiateWithPhoton", RpcTarget.All,currentPreviewGameObject.transform.position);
+                    photonView.RPC("InstantiateWithPhoton", RpcTarget.All, currentPreviewGameObject.transform.position);
 
                     Destroy(currentPreviewGameObject);
                     currentPreviewGameObject.GetComponentInChildren<MeshRenderer>().material.color = Color.white;
@@ -77,9 +84,8 @@ public class BuildController : MonoBehaviourPun
 
     public void StartBuildMode()
     {
-        if (currentPreviewGameObject == null)
+        if (currentPreviewGameObject == null && placedFloors.Count < maxPlaceAbleFloors)
         {
-            
             currentPreviewGameObject = Instantiate(standardFloorPrefab, buildModelsHolder.transform);
 
             //Rigidbody kinem, is imported for check triggers in preview.
@@ -92,12 +98,12 @@ public class BuildController : MonoBehaviourPun
             {
                 rb = currentPreviewGameObject.AddComponent<Rigidbody>();
             }
-            
+
             rb.isKinematic = true;
 
             if (currentPreviewGameObject.GetComponent<BoxCollider>() != null)
                 currentPreviewGameObject.GetComponent<BoxCollider>().isTrigger = true;
-            
+
             currentPreviewScript = currentPreviewGameObject.AddComponent<Preview>();
         }
     }
@@ -107,6 +113,30 @@ public class BuildController : MonoBehaviourPun
     {
         GameObject gO = Instantiate(standardFloorPrefab, pos,
             Quaternion.identity);
-        Destroy(gO,6);
+        
+        placedFloors.Add(gO);
+        
+        floorsLeftText.text = (maxPlaceAbleFloors - placedFloors.Count).ToString();
+        
+        if (destroyAfterSec)
+        {
+            Destroy(gO, 6);
+        }
+    }
+
+    public void RemoveAllFloors()
+    {
+        foreach (var floor in placedFloors)
+        {
+            Destroy(floor);
+        }
+        placedFloors.Clear();
+
+        floorsLeftText.text = maxPlaceAbleFloors.ToString();
+    }
+
+    public void FloorsLeftTextUpdater()
+    {
+        floorsLeftText.text = (maxPlaceAbleFloors - placedFloors.Count).ToString();
     }
 }
