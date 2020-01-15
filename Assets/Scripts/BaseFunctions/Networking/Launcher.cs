@@ -1,6 +1,7 @@
 ﻿using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Networking
 {
@@ -61,12 +62,16 @@ namespace Networking
 		{
 			progressPanel.SetActive(false);
 			controlPanel.SetActive(true);
+			
+		
 		}
 
 
 		#endregion
 
 
+		public GameObject levelSelectDropdown;
+		 
 
 		bool isConnecting;
 
@@ -129,12 +134,18 @@ namespace Networking
 
 			if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
 			{
-				Debug.Log("First Level is loading");
+				
+				Text dropdownText = levelSelectDropdown.GetComponent<Text>();
+				string dropdownValue = dropdownText.text;
+				Debug.Log("Dropdown Text is: "+dropdownValue);
+
+				Debug.Log(dropdownValue+" is loading");
 
 				PlayerPrefs.SetInt("level",1);
 				// #Critical
 				// Load the Room Level.
-				PhotonNetwork.LoadLevel(levelToLoad);
+				PhotonNetwork.LoadLevel(dropdownValue);
+				
 			}
 
 		}
