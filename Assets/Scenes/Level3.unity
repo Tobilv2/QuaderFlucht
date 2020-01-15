@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.54439956, g: 0.5070023, b: 0.5242686, a: 1}
+  m_IndirectSpecularColor: {r: 0.5425668, g: 0.5047162, b: 0.52498007, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -742,6 +742,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5854504493429575925, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 607829108}
+    - target: {fileID: 3755109242387758706, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 607829108}
     - target: {fileID: 7287411638315433710, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
         type: 3}
       propertyPath: m_RootOrder
@@ -757,11 +767,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5854504493429575925, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 607829108}
     - target: {fileID: 5934634170854432895, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
         type: 3}
       propertyPath: m_Faces.Array.size
@@ -21117,11 +21122,6 @@ PrefabInstance:
       propertyPath: m_Tangents.Array.data[645].w
       value: -1
       objectReference: {fileID: 0}
-    - target: {fileID: 3755109242387758706, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 607829108}
     - target: {fileID: 1251043669618425758, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
         type: 3}
       propertyPath: m_Center.x
@@ -30523,6 +30523,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 149654759}
+    - target: {fileID: 4513344275235779151, guid: ad85ec0d0df2e4257b3b7fe1671f534b,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 149654759}
     - target: {fileID: 4513344275235779148, guid: ad85ec0d0df2e4257b3b7fe1671f534b,
         type: 3}
       propertyPath: m_SelectedFaces.Array.size
@@ -30538,11 +30543,6 @@ PrefabInstance:
       propertyPath: m_SelectedVertices.Array.size
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 4513344275235779151, guid: ad85ec0d0df2e4257b3b7fe1671f534b,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 149654759}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad85ec0d0df2e4257b3b7fe1671f534b, type: 3}
 --- !u!1 &1180612631 stripped
@@ -31437,7 +31437,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c6325e430bc192439267e01c3e95b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondPlayerCam: {fileID: 0}
   selectedMaterial: {fileID: 2100000, guid: fe2c1ae2bb06dc6459718bb3eac33c28, type: 2}
 --- !u!4 &1826816611
 Transform:
