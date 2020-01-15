@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip audioClip;
     private new Animation animation;
     private bool DoorIsOpen;
 
     private void Start()
     {
-
+        audioSource.clip = audioClip;
         DoorIsOpen = true;
         CloseDoor();
     }
@@ -20,6 +22,7 @@ public class Door : MonoBehaviour
         if (!DoorIsOpen)
         {
             GetComponent<Animation>().Play("OpenDoor");
+            audioSource.Play();
             DoorIsOpen = true;
         }
     } 
@@ -29,6 +32,7 @@ public class Door : MonoBehaviour
         if (DoorIsOpen)
         {
             GetComponent<Animation>().Play("CloseDoor");
+            audioSource.Play();
             DoorIsOpen = false;
         }
     }
