@@ -38,5 +38,9 @@ MonoBehaviour:
   - hall
   - ReloadScenesForAllPlayers
   - SwapPos
+  - FloorResetter
+  - SetCubeActive
+  - SetCubeInActive
+  - SetPlacedAbleFloors
   DisableAutoOpenWizard: 1
   ShowSettings: 1
