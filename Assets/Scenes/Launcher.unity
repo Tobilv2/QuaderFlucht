@@ -227,7 +227,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -83}
+  m_AnchoredPosition: {x: 0, y: 11.5}
   m_SizeDelta: {x: 509.01, y: 207.40002}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &457645602
@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxPlayersPerRoom: 2
-  levelToLoad: Level20
+  levelToLoad: Level6
   controlPanel: {fileID: 812922892}
   progressPanel: {fileID: 6779171544605565290}
 --- !u!4 &560348676
