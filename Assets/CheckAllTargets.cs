@@ -6,10 +6,10 @@ using Photon.Pun;
 
 public class CheckAllTargets : MonoBehaviour
 {
-    private CheckGreenTarget greenTarget;
-    private CheckRedTarget redTarget;
-    private CheckYellowTarget yellowTarget;
-    private CheckPinkTarget pinkTarget;
+    public CheckGreenTarget greenTarget;
+    public CheckRedTarget redTarget;
+    public CheckYellowTarget yellowTarget;
+    public CheckPinkTarget pinkTarget;
 
     private void Start()
     {
