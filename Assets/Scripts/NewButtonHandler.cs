@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
-public class NewButtonHandler : MonoBehaviour
+public class NewButtonHandler : MonoBehaviourPunCallbacks
 {
     public bool isInteractableCubeSpawner;
     public bool isMetalCubeSpawner;
@@ -13,7 +14,9 @@ public class NewButtonHandler : MonoBehaviour
 
     public GameObject metalCube;
     public Transform spawnPoint;
+    public GameObject cube;
 
+    private int placeAbleFloors = 3;
     public BuildController buildController;
 
 
@@ -23,28 +26,25 @@ public class NewButtonHandler : MonoBehaviour
         {
             if (isMetalCubeSpawner)
             {
-                metalCube.SetActive(true);
-                metalCube.transform.position = spawnPoint.position;
+                photonView.RPC("SetCubeActive",RpcTarget.All);
             }
             
             if (isFloorMaxCountSizer)
             {
-                buildController.maxPlaceAbleFloors = 5;
-                buildController.FloorsLeftTextUpdater();
+                placeAbleFloors = 5;
+                photonView.RPC("SetPlacedAbleFloors",RpcTarget.All);
+
             }
         }
 
         if (other.CompareTag("Metal"))
         {
             if (isFloorReseter)
-            {
-                other.transform.position = spawnPoint.position;
-                buildController.RemoveAllFloors();
+            { 
+                cube = other.gameObject;
+               photonView.RPC("FloorResetter",RpcTarget.All);
             }
         }
-
-   
-        
     }
 
     private void OnTriggerExit(Collider other)
@@ -53,15 +53,46 @@ public class NewButtonHandler : MonoBehaviour
         {
             if (isMetalCubeSpawner)
             {
-                metalCube.SetActive(false);
+                photonView.RPC("SetCubeActive",RpcTarget.All);
+                
             }
             
             if (isFloorMaxCountSizer)
             {
-                buildController.maxPlaceAbleFloors = 2;
-                buildController.FloorsLeftTextUpdater();
+                placeAbleFloors = 2;
+                photonView.RPC("SetPlacedAbleFloors",RpcTarget.All);
+
             }
         }
 
+    }
+
+    [PunRPC]
+    void FloorResetter()
+    {
+        cube.transform.position = spawnPoint.position;
+        buildController.RemoveAllFloors();
+    }
+    
+    
+
+    [PunRPC]
+    void SetCubeInActive()
+    {
+        metalCube.SetActive(false);
+    } 
+    
+    [PunRPC]
+    void SetCubeActive()
+    {
+        metalCube.SetActive(true);
+        metalCube.transform.position = spawnPoint.position;
+    }
+
+    [PunRPC]
+    void SetPlacedAbleFloors()
+    {
+        buildController.maxPlaceAbleFloors = placeAbleFloors;
+        buildController.FloorsLeftTextUpdater();
     }
 }
