@@ -1275,7 +1275,7 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Level1
+    - m_Text: Level20
       m_Image: {fileID: 0}
     - m_Text: Level2
       m_Image: {fileID: 0}
