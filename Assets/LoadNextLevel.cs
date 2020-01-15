@@ -16,7 +16,7 @@ public class LoadNextLevel : MonoBehaviourPunCallbacks
         {
 
             PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
-            PhotonNetwork.LoadLevel("Level" + PlayerPrefs.GetInt("level").ToString());
+            PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
             print(PlayerPrefs.GetInt("level"));
         }
     }
