@@ -2,20 +2,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class CheckAllTargets : MonoBehaviour
 {
-    public Animation door;
     private CheckGreenTarget greenTarget;
     private CheckRedTarget redTarget;
     private CheckYellowTarget yellowTarget;
     private CheckPinkTarget pinkTarget;
-  
+
+    private void Start()
+    {
+       
+   
+    }
     void Update()
     {
-        if (this.greenTarget.green && yellowTarget.yellow && pinkTarget && redTarget)
+        if (greenTarget.GetGreen() && yellowTarget.GetYellow() && pinkTarget.GetPink() 
+            && redTarget.GetRed())
         {
-            door.Play("OpenDoor");
+            PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
+            PhotonNetwork.LoadLevel("Level" + PlayerPrefs.GetInt("level").ToString());
+            print(PlayerPrefs.GetInt("level"));
         }
     }
 
