@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1442,7 +1442,7 @@ GameObject:
   - component: {fileID: 654674739}
   - component: {fileID: 654674738}
   - component: {fileID: 654674742}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: VRTargetYellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2542,7 +2542,7 @@ GameObject:
   - component: {fileID: 1370417207}
   - component: {fileID: 1370417206}
   - component: {fileID: 1370417210}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: VRTargetRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2941,7 +2941,7 @@ GameObject:
   - component: {fileID: 1685907320}
   - component: {fileID: 1685907319}
   - component: {fileID: 1685907323}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: VRTargetGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3139,7 +3139,7 @@ GameObject:
   - component: {fileID: 1699717202}
   - component: {fileID: 1699717201}
   - component: {fileID: 1699717205}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: VRTargetPink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
