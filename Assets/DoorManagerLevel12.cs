@@ -1,33 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.Newtonsoft.Json.Serialization;
 
 public class DoorManagerLevel12 : MonoBehaviour
 {
     public enum DoorColors
     {
        Green,
-       Red,
-       Yellow
-       
+       Yellow,
+       Blue
     }
+    
+    
     public List<GameObject> greenDoors;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            ChangeState(DoorColors.Green);
-        }
-    }
-
-    public void ChangeState(DoorColors col)
+    public void Close(DoorColors col)
     {
         if (col == DoorColors.Green)
         {
@@ -37,4 +26,16 @@ public class DoorManagerLevel12 : MonoBehaviour
             }
         }
     }
+    public void Open(DoorColors col)
+    {
+        if (col == DoorColors.Green)
+        {
+            foreach (GameObject greenDoor in greenDoors)
+            {
+                greenDoor.GetComponent<DoorScriptLevel12>().ChangeState();
+            }
+        }
+    }
+    
+
 }
