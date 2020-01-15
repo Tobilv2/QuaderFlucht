@@ -71,9 +71,8 @@ public class NewButtonHandler : MonoBehaviourPunCallbacks
     [PunRPC]
     void FloorResetter()
     {
-        print("ok");
-     //   cube.transform.position = spawnPoint.position;
-     //   buildController.RemoveAllFloors();
+     cube.transform.position = spawnPoint.position;
+     buildController.RemoveAllFloors();
     }
     
     
