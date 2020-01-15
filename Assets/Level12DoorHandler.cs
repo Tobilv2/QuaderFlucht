@@ -13,7 +13,7 @@ public class Level12DoorHandler : MonoBehaviour
     {
         if (other.gameObject.CompareTag("OpenDoorButton"))
         {
-            manager.Open(color);
+            manager.Close(color);
         }
     }
 

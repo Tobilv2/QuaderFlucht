@@ -9,11 +9,15 @@ public class DoorManagerLevel12 : MonoBehaviour
     {
        Green,
        Yellow,
-       Blue
+       Blue,
+       Black
     }
     
     
     public List<GameObject> greenDoors;
+    public List<GameObject> yellowDoors;
+    public List<GameObject> blueDoors;
+    public List<GameObject> blackDoors;
   
 
     public void Close(DoorColors col)
@@ -25,17 +29,29 @@ public class DoorManagerLevel12 : MonoBehaviour
                 greenDoor.GetComponent<DoorScriptLevel12>().ChangeState();
             }
         }
-    }
-    public void Open(DoorColors col)
-    {
-        if (col == DoorColors.Green)
+        if (col == DoorColors.Yellow)
         {
-            foreach (GameObject greenDoor in greenDoors)
+            foreach (GameObject yellowDoor in yellowDoors)
             {
-                greenDoor.GetComponent<DoorScriptLevel12>().ChangeState();
+                yellowDoor.GetComponent<DoorScriptLevel12>().ChangeState();
+            }
+        }
+        if (col == DoorColors.Blue)
+        {
+            foreach (GameObject blueDoor in blueDoors)
+            {
+                blueDoor.GetComponent<DoorScriptLevel12>().ChangeState();
+            }
+        }
+        if (col == DoorColors.Black)
+        {
+            foreach (GameObject blackDoor in blackDoors)
+            {
+                blackDoor.GetComponent<DoorScriptLevel12>().ChangeState();
             }
         }
     }
+
     
 
 }
