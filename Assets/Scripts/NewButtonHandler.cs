@@ -40,8 +40,9 @@ public class NewButtonHandler : MonoBehaviourPunCallbacks
         if (other.CompareTag("Metal"))
         {
             if (isFloorReseter)
-            { 
+            {
                 cube = other.gameObject;
+
                photonView.RPC("FloorResetter",RpcTarget.All);
             }
         }
@@ -70,8 +71,9 @@ public class NewButtonHandler : MonoBehaviourPunCallbacks
     [PunRPC]
     void FloorResetter()
     {
-        cube.transform.position = spawnPoint.position;
-        buildController.RemoveAllFloors();
+        print("ok");
+     //   cube.transform.position = spawnPoint.position;
+     //   buildController.RemoveAllFloors();
     }
     
     

@@ -42,5 +42,7 @@ MonoBehaviour:
   - SetCubeActive
   - SetCubeInActive
   - SetPlacedAbleFloors
+  - StartCredits
+  - LoadMenuPun
   DisableAutoOpenWizard: 1
   ShowSettings: 1
