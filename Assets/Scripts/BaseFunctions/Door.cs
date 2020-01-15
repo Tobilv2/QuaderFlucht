@@ -13,7 +13,7 @@ public class DoorController : MonoBehaviour
         CloseDoor();
     }
 
-    private void OpenDoor()
+    public void OpenDoor()
     {
         if (!DoorIsOpen)
         {
