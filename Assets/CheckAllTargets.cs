@@ -6,10 +6,12 @@ using Photon.Pun;
 
 public class CheckAllTargets : MonoBehaviour
 {
+    public Animation door;
     public CheckGreenTarget greenTarget;
     public CheckRedTarget redTarget;
     public CheckYellowTarget yellowTarget;
     public CheckPinkTarget pinkTarget;
+    public Door doorObject;
 
     private void Start()
     {
@@ -21,9 +23,7 @@ public class CheckAllTargets : MonoBehaviour
         if (greenTarget.GetGreen() && yellowTarget.GetYellow() && pinkTarget.GetPink() 
             && redTarget.GetRed())
         {
-            PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
-            PhotonNetwork.LoadLevel("Level" + PlayerPrefs.GetInt("level").ToString());
-            print(PlayerPrefs.GetInt("level"));
+            doorObject.OpenDoor();
         }
     }
 

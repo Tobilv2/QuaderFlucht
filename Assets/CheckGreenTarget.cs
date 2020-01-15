@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckGreenTarget : MonoBehaviour
 {
-    private bool green = false;
+    public bool green = false;
 
     private void OnCollisionEnter(Collision collision)
     {

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -562,7 +562,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-56558
+  m_Name: pb_Mesh-8630
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -806,7 +806,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 229805826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.578, y: -3.488, z: 13.42}
+  m_LocalPosition: {x: -7.55, y: -3.75, z: 11.4}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1411,10 +1411,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 367a8c6b200954b4f8f020d9f8451f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  door: {fileID: 421627559485728288}
   greenTarget: {fileID: 1685907323}
   redTarget: {fileID: 1370417210}
   yellowTarget: {fileID: 654674742}
   pinkTarget: {fileID: 1699717205}
+  doorObject: {fileID: 624234911}
+--- !u!114 &624234911 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6928033559912425322, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 421627559485728287}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624234908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff59b920e4d5fea42ac023217cf75f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &624234915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1628,6 +1642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1215357af5a7a3348b6d84803f0cf33a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  yellow: 0
 --- !u!1001 &709795901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2071,7 +2086,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 831734813}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.828, y: -3.31, z: 13.43}
+  m_LocalPosition: {x: -11.86, y: -3.75, z: 11.05}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2727,6 +2742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e66dbae2ecb8b4d95fc5f810c743ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  red: 0
 --- !u!1 &1373469465
 GameObject:
   m_ObjectHideFlags: 0
@@ -2831,6 +2847,7 @@ GameObject:
   - component: {fileID: 1537051872}
   - component: {fileID: 1537051871}
   - component: {fileID: 1537051870}
+  - component: {fileID: 1537051874}
   m_Layer: 8
   m_Name: Yellow
   m_TagString: Yellow
@@ -2905,12 +2922,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537051869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.05, y: -4.71, z: 15.13}
+  m_LocalPosition: {x: -8, y: -3.77, z: 8.31}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1537051874
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537051869}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1549387392
 GameObject:
   m_ObjectHideFlags: 0
@@ -3229,7 +3262,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699717200}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -3319,6 +3352,7 @@ GameObject:
   - component: {fileID: 1752346083}
   - component: {fileID: 1752346082}
   - component: {fileID: 1752346081}
+  - component: {fileID: 1752346085}
   m_Layer: 8
   m_Name: Pink
   m_TagString: Pink
@@ -3393,12 +3427,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752346080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.05, y: -4.71, z: 0.81}
+  m_LocalPosition: {x: -12.06, y: -3.74, z: 6.7}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1752346085
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752346080}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1799001605
 GameObject:
   m_ObjectHideFlags: 0
@@ -3813,3 +3863,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b5e084c3f4c1f34696f541ecd56e1fd, type: 3}
+--- !u!111 &421627559485728288 stripped
+Animation:
+  m_CorrespondingSourceObject: {fileID: 6928033559912425326, guid: 4b5e084c3f4c1f34696f541ecd56e1fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 421627559485728287}
+  m_PrefabAsset: {fileID: 0}

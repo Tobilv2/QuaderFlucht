@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckPinkTarget : MonoBehaviour
 {
-    private bool pink = false;
+    public bool pink = false;
 
     private void OnCollisionEnter(Collision collision)
     {
