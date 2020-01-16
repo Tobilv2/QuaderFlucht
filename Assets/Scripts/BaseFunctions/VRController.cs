@@ -43,15 +43,15 @@ public class VRController : MonoBehaviour
         {//make sure the touch isn't in the deadzone and we aren't going to fast.
             CapCollider.material = NoFrictionMaterial;
             velocity = moveDirection;
-            if (JumpAction.GetStateDown(MovementHand) && GroundCount > 0)
-            {
-                float jumpSpeed = Mathf.Sqrt(2 * jumpHeight * 9.81f);
-                RBody.AddForce(0, jumpSpeed, 0, ForceMode.VelocityChange);
-            }
             RBody.AddForce(velocity.x*MovementSpeed - RBody.velocity.x, 0, velocity.z*MovementSpeed - RBody.velocity.z, ForceMode.VelocityChange);
 
             Debug.Log("Velocity" + velocity);
             Debug.Log("Movement Direction:" + moveDirection);
+        }
+        if (JumpAction.GetStateDown(MovementHand) && GroundCount > 0)
+        {
+            float jumpSpeed = Mathf.Sqrt(2 * jumpHeight * 9.81f);
+            RBody.AddForce(0, jumpSpeed, 0, ForceMode.VelocityChange);
         }
         else if(GroundCount > 0)
         {
