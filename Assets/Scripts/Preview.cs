@@ -25,7 +25,7 @@ public class Preview : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        IsBuildable = false;
+//        IsBuildable = false;
     }
     
     private void OnTriggerExit(Collider other)
