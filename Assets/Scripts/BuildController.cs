@@ -54,7 +54,7 @@ public class BuildController : MonoBehaviourPun
             }
 
             //Build Preview
-            if (Input.GetMouseButtonDown(1) && currentPreviewGameObject != null)
+            if (Input.GetMouseButtonDown(0) && currentPreviewGameObject != null)
             {
                 if (currentPreviewScript.IsBuildable || currentPreviewGameObject.CompareTag("Enemy"))
                 {
